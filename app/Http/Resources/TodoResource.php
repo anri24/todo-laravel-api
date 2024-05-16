@@ -20,7 +20,8 @@ class TodoResource extends JsonResource
 //                    return $this->description;
 //
 //            }),
-            'description' => $this->description
+            'description' => $this->description,
+            'status' => $this->status
         ];
     }
 }
