@@ -11,7 +11,7 @@ class TodoResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'user' => UserResource::make($this->user()->first()),
+//            'user' => UserResource::make($this->user()->first()),
             'title' => $this->title,
 //            'description' => $this->when(true,function () use ($request){
 //                if ($request->routeIs('todos') && strlen($this->description) > 25){

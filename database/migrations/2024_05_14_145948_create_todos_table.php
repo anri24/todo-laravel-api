@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('todos', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained();
+//            $table->foreignId('user_id')->constrained();
             $table->string('title');
             $table->text('description')->nullable();
+            $table->boolean('status')->default(false);
             $table->timestamps();
         });
     }

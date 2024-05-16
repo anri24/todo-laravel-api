@@ -13,4 +13,6 @@ interface TodoRepositoryInterface
     public function update($data,$id);
 
     public function delete($id);
+
+    public function updateStatus($id);
 }

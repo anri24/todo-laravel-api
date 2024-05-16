@@ -14,7 +14,7 @@ class TodoRepository implements TodoRepositoryInterface
 
     public function getAll(): Collection
     {
-        return $this->model::all();
+        return $this->model::query()->orderBy('status','ASC')->get();
     }
 
     public function findById($id)
@@ -27,13 +27,18 @@ class TodoRepository implements TodoRepositoryInterface
         return $this->model::create($data);
     }
 
-    public function update($data, $id): void
+    public function update($data, $id)
     {
-        $this->findById($id)->update($data);
+        return $this->findById($id)->update($data);
     }
 
-    public function delete($id): void
+    public function delete($id)
     {
-        $this->findById($id)->delete();
+        return $this->findById($id)->delete();
+    }
+
+    public function updateStatus($id)
+    {
+        return $this->findById($id)->update(['status' => $this->findById($id)->status === 0 ? 1 : 0]);
     }
 }

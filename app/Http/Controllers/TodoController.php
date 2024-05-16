@@ -42,4 +42,9 @@ class TodoController extends Controller
         return $this->repository->delete($id);
     }
 
+    public function updateStatus($id)
+    {
+        return $this->repository->updateStatus($id);
+    }
+
 }

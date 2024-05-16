@@ -22,10 +22,7 @@ class User extends Authenticatable
         'password',
     ];
 
-    public function todo()
-    {
-        return $this->hasMany(Todo::class,'user_id','id');
-    }
+
 
     /**
      * The attributes that should be hidden for serialization.

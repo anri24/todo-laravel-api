@@ -13,6 +13,7 @@ Route::controller(TodoController::class)->middleware('cors')->group(function (){
     Route::get('/todos','index')->name('todos');
     Route::get('/todo/{id}','show')->name('todo');
     Route::post('/store/todo','store');
-    Route::patch('/update/todo/{id}','update');
+    Route::put('/update/todo/{id}','update');
     Route::delete('/delete/todo/{id}','delete');
+    Route::patch('/update/status/{id}','updateStatus');
 });
